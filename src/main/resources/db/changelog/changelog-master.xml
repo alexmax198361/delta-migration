@@ -6,4 +6,6 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
     <include file="classpath:db/changelog/2022/10/21-01-changelog.xml"/>
+    <include file="classpath:db/changelog/2022/10/22-01-changelog.xml"/>
+    <include file="classpath:db/changelog/2022/10/22-02-changelog.xml"/>
 </databaseChangeLog>

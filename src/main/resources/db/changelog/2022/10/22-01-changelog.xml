@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666387141162-6" author="a.sazanovich (generated)">
+        <createTable tableName="market">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_market"/>
+            </column>
+            <column name="name" type="VARCHAR(25)"/>
+            <column name="type" type="INT"/>
+            <column name="is_active" type="TINYINT"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+            <column name="default_language" type="INT"/>
+            <column name="default_territory" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666387141162-7" author="a.sazanovich (generated)">
+        <createTable tableName="market_region_territory">
+            <column name="market" type="INT"/>
+            <column name="region" type="INT"/>
+            <column name="territory" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666387141162-8" author="a.sazanovich (generated)">
+        <createTable tableName="region">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_region"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666387141162-9" author="a.sazanovich (generated)">
+        <createTable tableName="territory">
+            <column autoIncrement="true" name="territory_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_territory"/>
+            </column>
+            <column name="territory_name" type="VARCHAR(255)"/>
+            <column name="territory_name_abbr_two" type="VARCHAR(12)"/>
+            <column name="territory_name_abbr_three" type="VARCHAR(12)"/>
+            <column name="storm_territory_id" type="INT"/>
+            <column name="territory_flag_filename" type="VARCHAR(64)"/>
+            <column name="region_id" type="INT"/>
+            <column name="parent_territory_id" type="INT"/>
+            <column name="isactive" type="TINYINT"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

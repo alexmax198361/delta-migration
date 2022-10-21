@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666388938758-1" author="a.sazanovich (generated)">
+        <modifyDataType columnName="name" newDataType="VARCHAR(255)" tableName="market"/>
+    </changeSet>
+    <changeSet id="1666388938758-2" author="a.sazanovich (generated)">
+        <dropColumn columnName="type" tableName="market"/>
+    </changeSet>
+    <changeSet id="1666388938758-3" author="a.sazanovich (generated)">
+        <addColumn tableName="market">
+            <column name="type" type="ENUM('NULL', 'Territory', 'Region', 'Custom')"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
