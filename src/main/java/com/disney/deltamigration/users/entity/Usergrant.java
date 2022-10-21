@@ -1,9 +1,19 @@
-package com.disney.delta.entity;
+package com.disney.deltamigration.users.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class Usergrant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

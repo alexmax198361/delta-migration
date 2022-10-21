@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666382829017-1" author="a.sazanovich (generated)">
+        <createTable tableName="customer">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_customer"/>
+            </column>
+            <column name="customer_name" type="VARCHAR(255)"/>
+            <column name="group_id" type="INT"/>
+            <column name="xytech_customer_id" type="INT"/>
+            <column name="isactive" type="BOOLEAN"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="update_date" type="DATETIME"/>
+        </createTable>
+
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users"/>
+            </column>
+            <column name="first_name" type="VARCHAR(120)"/>
+            <column name="last_name" type="VARCHAR(120)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="email_alt" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(120)"/>
+            <column name="password" type="VARCHAR(32)"/>
+            <column name="phone_work" type="VARCHAR(120)"/>
+            <column name="phone_mobile" type="VARCHAR(120)"/>
+            <column name="phone_alt" type="VARCHAR(120)"/>
+            <column name="department" type="VARCHAR(120)"/>
+            <column name="location" type="VARCHAR(120)"/>
+            <column name="room" type="VARCHAR(120)"/>
+            <column name="timezone_offset" type="INT"/>
+            <column name="ldap_id" type="VARCHAR(256)"/>
+            <column name="ad_id" type="VARCHAR(256)"/>
+            <column name="other_id" type="VARCHAR(256)"/>
+            <column name="function" type="VARCHAR(120)"/>
+            <column name="prepassetvideo" type="BOOLEAN"/>
+            <column name="prepassetaudio" type="BOOLEAN"/>
+            <column name="prepassetlir" type="BOOLEAN"/>
+            <column name="prepassettimedtext" type="BOOLEAN"/>
+            <column name="prepassettrailer" type="BOOLEAN"/>
+            <column name="prepassetmetadata" type="BOOLEAN"/>
+            <column name="prepassetartwork" type="BOOLEAN"/>
+            <column name="prepassetbonus" type="BOOLEAN"/>
+            <column name="operator" type="BOOLEAN"/>
+            <column name="type" type="INT"/>
+            <column name="hub_id" type="VARCHAR(256)"/>
+            <column name="wmlsid" type="VARCHAR(255)"/>
+            <column name="wmls_domain" type="VARCHAR(16)"/>
+            <column name="stormid" type="VARCHAR(255)"/>
+            <column name="template" type="INT"/>
+            <column name="address1" type="VARCHAR(255)"/>
+            <column name="address2" type="VARCHAR(255)"/>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="state" type="VARCHAR(255)"/>
+            <column name="postalcode" type="VARCHAR(255)"/>
+            <column name="country" type="VARCHAR(255)"/>
+            <column name="businessname" type="VARCHAR(255)"/>
+            <column name="active" type="BOOLEAN"/>
+            <column name="notes" type="VARCHAR(255)"/>
+            <column name="last_login" type="DATETIME"/>
+            <column name="business_approve" type="INT"/>
+            <column name="technical_approve" type="INT"/>
+            <column name="contact_id" type="INT"/>
+            <column name="tou_acceptance_date" type="DATETIME"/>
+            <column name="daily_digest_notification_timestamp" type="DATETIME"/>
+            <column name="session_alive" type="BOOLEAN"/>
+            <column name="google_auth_secret" type="VARCHAR(32)"/>
+            <column name="secret_expiration_date" type="DATETIME"/>
+            <column name="google_authenticator_installed" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-2" author="a.sazanovich (generated)">
+        <createTable tableName="grant_template">
+            <column name="grant" type="INT"/>
+            <column name="template" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-3" author="a.sazanovich (generated)">
+        <createTable tableName="grant_user">
+            <column name="grant" type="INT"/>
+            <column name="user" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-4" author="a.sazanovich (generated)">
+        <createTable tableName="group_user">
+            <column name="group" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user" type="INT"/>
+            <column name="isprimary" type="TINYINT"/>
+            <column name="contact_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-5" author="a.sazanovich (generated)">
+        <createTable tableName="groups">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_groups"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="vendor_id" type="INT"/>
+            <column name="customer_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-6" author="a.sazanovich (generated)">
+        <createTable tableName="user_log">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_userlog"/>
+            </column>
+            <column name="login" type="VARCHAR(255)"/>
+            <column name="date_time" type="DATETIME"/>
+            <column name="success" type="TINYINT"/>
+            <column name="user_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-7" author="a.sazanovich (generated)">
+        <createTable tableName="usergrant">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_usergrant"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-9" author="a.sazanovich (generated)">
+        <createTable tableName="usertemplate">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_usertemplate"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-10" author="a.sazanovich (generated)">
+        <createTable tableName="usertype">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_usertype"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666382829017-11" author="a.sazanovich (generated)">
+        <createTable tableName="vendor">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vendor"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="logo" type="VARCHAR(255)"/>
+            <column name="vendor_type_id" type="INT"/>
+            <column name="vendor_abbr" type="VARCHAR(2)"/>
+            <column name="onboard_automation" type="TINYINT"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+            <column name="api_key" type="VARCHAR(20000)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

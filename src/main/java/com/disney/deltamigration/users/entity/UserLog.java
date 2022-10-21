@@ -1,11 +1,20 @@
-package com.disney.delta.entity;
+package com.disney.deltamigration.users.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user_log", schema = "dsop_db_live", catalog = "")
+@Table
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class UserLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
