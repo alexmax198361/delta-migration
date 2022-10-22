@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666424478840-3" author="a.sazanovich (generated)">
+        <createTable tableName="profile_template_base">
+            <column autoIncrement="true" name="profile_template_base_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_profile_template_base"/>
+            </column>
+            <column name="base_name" type="VARCHAR(100)"/>
+            <column name="base_xml_message" type="BLOB"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666424478840-4" author="a.sazanovich (generated)">
+        <createTable tableName="profile_template_manufacturing">
+            <column autoIncrement="true" name="profile_template_manufacturing_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_profile_template_manufacturing"/>
+            </column>
+            <column name="manufacturing_name" type="VARCHAR(100)"/>
+            <column name="manufacturing_xml_message" type="BLOB"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666424478840-5" author="a.sazanovich (generated)">
+        <createTable tableName="profile_template_milestone">
+            <column autoIncrement="true" name="profile_template_milestone_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_profile_template_milestone"/>
+            </column>
+            <column name="milestone_name" type="VARCHAR(100)"/>
+            <column name="milestone_xml_message" type="BLOB"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666424478840-6" author="a.sazanovich (generated)">
+        <createTable tableName="profile_template_source">
+            <column autoIncrement="true" name="profile_template_source_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_profile_template_source"/>
+            </column>
+            <column name="source_name" type="VARCHAR(100)"/>
+            <column name="source_xml_message" type="BLOB"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666424478840-7" author="a.sazanovich (generated)">
+        <createTable tableName="profile_template_transaction">
+            <column autoIncrement="true" name="profile_template_transaction_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_profile_template_transaction"/>
+            </column>
+            <column name="transaction_name" type="VARCHAR(100)"/>
+            <column name="transaction_xml_message" type="BLOB"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
