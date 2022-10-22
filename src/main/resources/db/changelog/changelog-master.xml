@@ -8,5 +8,6 @@
     <include file="classpath:db/changelog/2022/10/21-01-changelog.xml"/>
     <include file="classpath:db/changelog/2022/10/22-01-changelog.xml"/>
     <include file="classpath:db/changelog/2022/10/22-02-changelog.xml"/>
+    <include file="classpath:db/changelog/2022/10/22-03-changelog.xml"/>
     <include file="classpath:db/changelog/2022/10/22-04-changelog.xml"/>
 </databaseChangeLog>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666466972966-3" author="a.sazanovich (generated)">
+        <createTable tableName="retailer">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_retailer"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="param" type="VARCHAR(255)"/>
+            <column name="code" type="VARCHAR(3)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="childretailers" type="VARCHAR(255)"/>
+            <column name="notes" type="VARCHAR(255)"/>
+            <column name="retailer_active" type="TINYINT"/>
+            <column name="popularity" type="INT"/>
+            <column name="sale_est" type="TINYINT"/>
+            <column name="sale_dadat" type="TINYINT"/>
+            <column name="sale_datg" type="TINYINT"/>
+            <column name="sale_emea" type="TINYINT"/>
+            <column name="storm_account_id" type="INT"/>
+            <column name="isclientdeliverabledriven" type="TINYINT"/>
+            <column name="is_test_retailer" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+            <column name="accepts_vendor_id" type="TINYINT"/>
+        </createTable>
+
+        <createTable tableName="retailer_profile">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_retailer_profile"/>
+            </column>
+            <column name="retailer_id" type="INT"/>
+            <column name="filename" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="updated" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isdeleted" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="xml" type="VARCHAR(255)"/>
+            <column name="profile_type" type="SMALLINT"/>
+            <column name="territory_id" type="INT"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="xytech_wo_type_no" type="INT"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="charge_code" type="INT"/>
+            <column name="notes" type="VARCHAR(255)"/>
+            <column name="localization_type" type="VARCHAR(255)"/>
+            <column name="presentation_type" type="VARCHAR(255)"/>
+            <column name="base_id" type="INT"/>
+            <column name="manufacturing_id" type="INT"/>
+            <column name="milestone_id" type="INT"/>
+            <column name="sources_id" type="INT"/>
+            <column name="transaction_id" type="INT"/>
+            <column name="is_automated" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666466972966-5" author="a.sazanovich (generated)">
+        <createTable tableName="retailer_profile_workflowdefinition">
+            <column name="retailer_profile" type="INT"/>
+            <column name="workflowdefinition" type="INT"/>
+            <column name="isdefault" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666466972966-6" author="a.sazanovich (generated)">
+        <createTable tableName="retailer_site">
+            <column autoIncrement="true" name="retailer_site_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_retailer_site"/>
+            </column>
+            <column name="retailer" type="INT"/>
+            <column name="site_name" type="VARCHAR(50)"/>
+            <column name="site_xml" type="VARCHAR(255)"/>
+            <column name="delivery_method" type="VARCHAR(255)"/>
+            <column name="created_by" type="INT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="created_on" type="DATETIME"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666466972966-7" author="a.sazanovich (generated)">
+        <createTable tableName="retailer_type">
+            <column autoIncrement="true" name="retailer_type_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_retailer_type"/>
+            </column>
+            <column name="retailer_type_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666466972966-8" author="a.sazanovich (generated)">
+        <createTable tableName="retailer_user">
+            <column name="retailer" type="INT"/>
+            <column name="user" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-319" author="a.sazanovich (generated)">
+        <createTable tableName="workflow_definition">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_workflow_definition"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="author" type="INT"/>
+            <column name="author_date" type="DATETIME"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="file_path" type="VARCHAR(255)"/>
+            <column name="is_automated" type="TINYINT"/>
+            <column name="is_redelivery" type="TINYINT"/>
+            <column name="is_transmit" type="TINYINT"/>
+            <column name="updated_by" type="INT"/>
+            <column name="updated_on" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-320" author="a.sazanovich (generated)">
+        <createTable tableName="workflow_definition_vendor">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_workflow_definition_vendor"/>
+            </column>
+            <column name="vendorsite_id" type="INT"/>
+            <column name="workflow_definition_id" type="INT"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="isdefault" type="TINYINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-321" author="a.sazanovich (generated)">
+        <createTable tableName="workflow_manager">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_workflow_manager"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="workflow_xml" type="VARCHAR(255)"/>
+            <column name="input_message" type="VARCHAR(255)"/>
+            <column name="output_message" type="VARCHAR(255)"/>
+            <column name="workflow_status" type="VARCHAR(255)"/>
+            <column name="order_xml" type="VARCHAR(255)"/>
+            <column name="original_order_xml" type="VARCHAR(255)"/>
+            <column name="start_time" type="DATETIME"/>
+            <column name="end_time" type="DATETIME"/>
+            <column name="parent_workflow_id" type="INT"/>
+            <column name="parent_task_id" type="INT"/>
+            <column name="media_object_id" type="INT"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
