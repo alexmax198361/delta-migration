@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666464312144-51" author="a.sazanovich (generated)">
+        <createTable tableName="title">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_title"/>
+            </column>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="storm_title_id" type="INT"/>
+            <column name="legal_title" type="VARCHAR(255)"/>
+            <column name="alt" type="VARCHAR(255)"/>
+            <column name="abbreviated" type="VARCHAR(255)"/>
+            <column name="mpm" type="BIGINT"/>
+            <column name="release_year" type="INT"/>
+            <column name="aspect_ratio" type="INT"/>
+            <column name="banner" type="VARCHAR(255)"/>
+            <column name="popularity" type="INT"/>
+            <column name="creation_date" type="DATE"/>
+            <column name="priority" type="INT"/>
+            <column name="origin_territory_id" type="INT"/>
+            <column name="original_version_language_id" type="INT"/>
+            <column name="isan" type="VARCHAR(255)"/>
+            <column name="imdb_id" type="VARCHAR(255)"/>
+            <column name="production_company_id" type="INT"/>
+            <column name="title_radar_info_id" type="INT"/>
+            <column name="source_approved" type="TINYINT"/>
+            <column name="source_approved_by" type="VARCHAR(255)"/>
+            <column name="source_approved_date" type="DATE"/>
+            <column name="storm_mpm_product_number" type="BIGINT"/>
+            <column name="umid" type="VARCHAR(255)"/>
+            <column name="type_name" type="VARCHAR(255)"/>
+            <column name="provider_name" type="VARCHAR(255)"/>
+            <column name="update_timestamp" type="DATETIME"/>
+            <column name="world_id" type="INT"/>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="product_type" type="VARCHAR(255)"/>
+            <column name="default_eidr_org" type="INT"/>
+            <column name="default_eidr_org_type" type="VARCHAR(255)"/>
+            <column name="is_animated" type="TINYINT"/>
+            <column name="bonus_lock" type="TINYINT"/>
+            <column name="bonus_priority" type="INT"/>
+            <column name="is_active" type="TINYINT"/>
+            <column name="is_asset_prep_locked" type="TINYINT"/>
+            <column name="is_library" type="TINYINT"/>
+            <column name="trt" type="VARCHAR(255)"/>
+            <column name="working_title" type="VARCHAR(255)"/>
+            <column name="is_locked" type="TINYINT"/>
+            <column name="ispublishable" type="TINYINT"/>
+            <column name="xytech_title_no" type="INT"/>
+            <column name="eidr_title_id" type="VARCHAR(255)"/>
+            <column name="wbs_number" type="INT"/>
+            <column name="sonar_title_id" type="INT"/>
+            <column name="th_title_abbr" type="VARCHAR(255)"/>
+            <column name="theatrical_oar" type="INT"/>
+            <column name="projector_ar_code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-52" author="a.sazanovich (generated)">
+        <createTable tableName="titleversion">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_titleversion"/>
+            </column>
+            <column name="title_id" type="INT"/>
+            <column name="version_type_id" type="INT"/>
+            <column name="trt" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="isan" type="VARCHAR(255)"/>
+            <column name="isprimary" type="TINYINT"/>
+            <column name="is_active" type="TINYINT"/>
+            <column name="eidr_version_id" type="VARCHAR(255)"/>
+            <column name="edit_use_id" type="INT"/>
+            <column name="islocked" type="TINYINT"/>
+            <column name="structural_type" type="VARCHAR(255)"/>
+            <column name="resource_name" type="VARCHAR(255)"/>
+            <column name="release_date" type="DATETIME"/>
+            <column name="publication_status" type="VARCHAR(255)"/>
+            <column name="edit_details" type="VARCHAR(255)"/>
+            <column name="color_type" type="VARCHAR(255)"/>
+            <column name="is3d" type="TINYINT"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="update_date" type="DATETIME"/>
+            <column name="delta_asset_id" type="INT"/>
+            <column name="isassetneeded" type="TINYINT"/>
+            <column name="approximate_length" type="VARCHAR(255)"/>
+            <column name="is_deleted" type="TINYINT"/>
+            <column name="referent_type" type="VARCHAR(255)"/>
+            <column name="is_default" type="TINYINT"/>
+            <column name="version_radar_info_id" type="INT"/>
+            <column name="language_id" type="INT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="version_code" type="VARCHAR(255)"/>
+            <column name="isdefaultlanguage" type="TINYINT"/>
+            <column name="parent_title_version_id" type="INT"/>
+            <column name="is_restricted" type="TINYINT"/>
+            <column name="sonar_title_version_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-134" author="a.sazanovich (generated)">
+        <createTable tableName="content_version_package">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_content_version_package"/>
+            </column>
+            <column name="title_version_package_type" type="VARCHAR(255)"/>
+            <column name="title_version_id" type="INT"/>
+            <column name="content_type" type="VARCHAR(255)"/>
+            <column name="map_status" type="VARCHAR(255)"/>
+            <column name="map_revision" type="INT"/>
+            <column name="map_date" type="DATE"/>
+            <column name="map_assignee" type="INT"/>
+            <column name="map_lastauthor" type="INT"/>
+            <column name="map_ingestdirectory" type="VARCHAR(255)"/>
+            <column name="map_workflow_stage" type="INT"/>
+            <column name="assignee" type="INT"/>
+            <column name="priority" type="VARCHAR(255)"/>
+            <column name="rank" type="INT"/>
+            <column name="map_stagediretory" type="VARCHAR(255)"/>
+            <column name="map_qc_status" type="TINYINT"/>
+            <column name="map_manual_link_required" type="TINYINT"/>
+            <column name="map_assignee_group" type="INT"/>
+            <column name="group_id" type="INT"/>
+            <column name="relatedcontent_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-32" author="a.sazanovich (generated)">
+        <createTable tableName="product">
+            <column autoIncrement="true" name="product_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="market_id" type="INT"/>
+            <column name="title_id" type="INT"/>
+            <column name="line_of_business" type="INT"/>
+            <column name="titleversion_id" type="INT"/>
+            <column name="producttemplate_id" type="INT"/>
+            <column name="locked" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-226" author="a.sazanovich (generated)">
+        <createTable tableName="product_element">
+            <column autoIncrement="true" name="productelement_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product_element"/>
+            </column>
+            <column name="product_id" type="INT"/>
+            <column name="product_element_type_id" type="INT"/>
+            <column name="product_experience_type_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-227" author="a.sazanovich (generated)">
+        <createTable tableName="product_element_type">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product_element_type"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-228" author="a.sazanovich (generated)">
+        <createTable tableName="product_experience_type">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product_experience_type"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-229" author="a.sazanovich (generated)">
+        <createTable tableName="product_note">
+            <column autoIncrement="true" name="product_note_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product_note"/>
+            </column>
+            <column name="product_id" type="INT"/>
+            <column name="note_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-230" author="a.sazanovich (generated)">
+        <createTable tableName="productelement_deltaasset">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_productelement_deltaasset"/>
+            </column>
+            <column name="productelement_id" type="INT"/>
+            <column name="delta_id" type="INT"/>
+            <column name="asset_primary" type="TINYINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-298" author="a.sazanovich (generated)">
+        <createTable tableName="title_language">
+            <column autoIncrement="true" name="title_language_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_title_language"/>
+            </column>
+            <column name="language_id" type="INT"/>
+            <column name="title_id" type="INT"/>
+            <column name="localized_title_name" type="VARCHAR(255)"/>
+            <column name="keywords" type="VARCHAR(255)"/>
+            <column name="short_synopsis" type="VARCHAR(255)"/>
+            <column name="medium_synopsis" type="VARCHAR(255)"/>
+            <column name="long_synopsis" type="VARCHAR(255)"/>
+            <column name="rating_reason" type="VARCHAR(255)"/>
+            <column name="source_tp_id" type="INT"/>
+            <column name="source_tp_approval_id" type="INT"/>
+            <column name="source_tp_approved" type="TINYINT"/>
+            <column name="source_tp_approved_by" type="VARCHAR(255)"/>
+            <column name="source_tp_approved_date" type="DATE"/>
+            <column name="source_product_type_name" type="VARCHAR(255)"/>
+            <column name="source_product_edition" type="VARCHAR(255)"/>
+            <column name="source_updated_date" type="DATE"/>
+            <column name="source_updated_by" type="VARCHAR(255)"/>
+            <column name="update_timestamp" type="DATETIME"/>
+            <column name="assignee" type="INT"/>
+            <column name="priority" type="VARCHAR(255)"/>
+            <column name="status" type="INT"/>
+            <column name="refresh_timestamp" type="DATETIME"/>
+            <column name="copyright_holder" type="VARCHAR(255)"/>
+            <column name="cast_from_title" type="TINYINT"/>
+            <column name="crew_from_title" type="TINYINT"/>
+            <column name="storm_film_id" type="INT"/>
+            <column name="chapters_approved" type="TINYINT"/>
+            <column name="group_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-304" author="a.sazanovich (generated)">
+        <createTable tableName="title_territory">
+            <column autoIncrement="true" name="title_territory_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_title_territory"/>
+            </column>
+            <column name="territory_id" type="INT"/>
+            <column name="title_id" type="INT"/>
+            <column name="box_office" type="VARCHAR(255)"/>
+            <column name="theatrical_release_date" type="DATE"/>
+            <column name="street_release_date" type="DATE"/>
+            <column name="rating_id" type="INT"/>
+            <column name="source_tp_id" type="INT"/>
+            <column name="source_tp_approval_id" type="INT"/>
+            <column name="source_tp_approved" type="TINYINT"/>
+            <column name="source_tp_approved_by" type="VARCHAR(255)"/>
+            <column name="source_tp_approved_date" type="DATE"/>
+            <column name="source_product_type_name" type="VARCHAR(255)"/>
+            <column name="source_product_edition" type="VARCHAR(255)"/>
+            <column name="source_updated_date" type="DATE"/>
+            <column name="source_updated_by" type="VARCHAR(255)"/>
+            <column name="update_timestamp" type="DATETIME"/>
+            <column name="refresh_timestamp" type="DATETIME"/>
+            <column name="status" type="INT"/>
+            <column name="rating_reason" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-166" author="a.sazanovich (generated)">
+        <createTable tableName="event_type">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_event_type"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="note_text_template" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-167" author="a.sazanovich (generated)">
+        <createTable tableName="event_type_object_map">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_event_type_object_map"/>
+            </column>
+            <column name="event_type_id" type="INT"/>
+            <column name="object_type_id" type="VARCHAR(255)"/>
+            <column name="sequence_no" type="INT"/>
+            <column name="default_scope" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-310" author="a.sazanovich (generated)">
+        <createTable tableName="user_event_subscriptions">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_event_subscriptions"/>
+            </column>
+            <column name="user_id" type="INT"/>
+            <column name="event_type_id" type="INT"/>
+            <column name="object_type_id" type="VARCHAR(255)"/>
+            <column name="object_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-29" author="a.sazanovich (generated)">
+        <createTable tableName="note">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_note"/>
+            </column>
+            <column name="parent_id" type="INT"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="user_id" type="INT"/>
+            <column name="notedate" type="DATETIME"/>
+            <column name="contents" type="VARCHAR(255)"/>
+            <column name="attachment" type="VARCHAR(255)"/>
+            <column name="link" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="isresolution" type="TINYINT"/>
+            <column name="resolved_date" type="DATETIME"/>
+            <column name="assigned_to_userid" type="INT"/>
+            <column name="update_date" type="DATETIME"/>
+            <column name="event_type_id" type="INT"/>
+            <column name="newsfeed_status" type="VARCHAR(255)"/>
+            <column name="newsfeed_process_date" type="DATETIME"/>
+            <column name="follower_status" type="VARCHAR(255)"/>
+            <column name="follower_process_date" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-197" author="a.sazanovich (generated)">
+        <createTable tableName="note_context">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_note_context"/>
+            </column>
+            <column name="note_id" type="INT"/>
+            <column name="object_type_id" type="VARCHAR(255)"/>
+            <column name="object_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

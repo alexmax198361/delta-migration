@@ -1,4 +1,4 @@
-package com.disney.deltamigration.library.entity;
+package com.disney.deltamigration.retailer.entity;
 
 public enum MarketType {
     NULL, Territory, Region, Custom
