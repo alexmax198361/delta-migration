@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1666464312144-30" author="a.sazanovich (generated)">
+        <createTable tableName="orders">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_orders"/>
+            </column>
+            <column name="order_date" type="DATETIME"/>
+            <column name="retailer_id" type="INT"/>
+            <column name="creator" type="INT"/>
+            <column name="behalf" type="INT"/>
+            <column name="behalf_group" type="INT"/>
+            <column name="priority" type="VARCHAR(255)"/>
+            <column name="duedate" type="DATE"/>
+            <column name="order_status" type="VARCHAR(255)"/>
+            <column name="order_type" type="VARCHAR(255)"/>
+            <column name="system_generated" type="TINYINT"/>
+            <column name="charge_code" type="INT"/>
+            <column name="car_assignment" type="INT"/>
+            <column name="vendor" type="INT"/>
+            <column name="parent_do" type="INT"/>
+            <column name="billing_status" type="VARCHAR(255)"/>
+            <column name="order_closed_date" type="DATETIME"/>
+            <column name="vendorsite" type="INT"/>
+            <column name="order_notes" type="VARCHAR(255)"/>
+            <column name="retailer_profile_id" type="INT"/>
+            <column name="order_name" type="VARCHAR(255)"/>
+            <column name="jobtype_id" type="INT"/>
+            <column name="division_id" type="INT"/>
+            <column name="customer_id" type="INT"/>
+            <column name="ratecard_id" type="INT"/>
+            <column name="project_manager_id" type="INT"/>
+            <column name="xytech_job_no" type="INT"/>
+            <column name="xytech_status" type="VARCHAR(255)"/>
+            <column name="workflow_id" type="INT"/>
+            <column name="justification" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-210" author="a.sazanovich (generated)">
+        <createTable tableName="order_title">
+            <column autoIncrement="true" name="order_title_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order_title"/>
+            </column>
+            <column name="order" type="INT"/>
+            <column name="title" type="INT"/>
+            <column name="title_duedate" type="DATE"/>
+            <column name="equal_cartduedate" type="TINYINT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="error" type="INT"/>
+            <column name="title_delivered_date" type="DATETIME"/>
+            <column name="retailer_profile_id" type="INT"/>
+            <column name="order_xml" type="VARCHAR(255)"/>
+            <column name="job_type" type="VARCHAR(255)"/>
+            <column name="note" type="VARCHAR(255)"/>
+            <column name="workflow_id" type="INT"/>
+            <column name="vendor_id" type="INT"/>
+            <column name="language_id" type="INT"/>
+            <column name="project_manager_id" type="INT"/>
+            <column name="charge" type="VARCHAR(255)"/>
+            <column name="workflow_definition_id" type="INT"/>
+            <column name="vendor_project_manager" type="INT"/>
+            <column name="count_items" type="INT"/>
+            <column name="vendorsite_id" type="INT"/>
+            <column name="related_order_title_id" type="INT"/>
+            <column name="related_order_title_type" type="VARCHAR(255)"/>
+            <column name="related_order_title_creator" type="INT"/>
+            <column name="order_title_start_time" type="DATETIME"/>
+            <column name="order_title_end_time" type="DATETIME"/>
+            <column name="version" type="INT"/>
+            <column name="retailer_id" type="INT"/>
+            <column name="xytech_wo_no" type="VARCHAR(255)"/>
+            <column name="customer_contact_id" type="INT"/>
+            <column name="order_title_name" type="VARCHAR(255)"/>
+            <column name="order_title_type" type="VARCHAR(255)"/>
+            <column name="ishigh_security" type="TINYINT"/>
+            <column name="isrush" type="TINYINT"/>
+            <column name="billing_amount" type="DECIMAL"/>
+            <column name="billing_type" type="VARCHAR(255)"/>
+            <column name="invoice_type" type="VARCHAR(255)"/>
+            <column name="nonbillable_reason_id" type="INT"/>
+            <column name="billing_lock_status" type="TINYINT"/>
+            <column name="xytech_status" type="VARCHAR(255)"/>
+            <column name="created_date" type="DATETIME"/>
+            <column name="creator" type="INT"/>
+            <column name="update_date" type="DATETIME"/>
+            <column name="updated_by" type="INT"/>
+            <column name="payable_amount" type="DECIMAL"/>
+            <column name="net_amount" type="DECIMAL"/>
+            <column name="isfullmanifest" type="TINYINT"/>
+            <column name="delta_id" type="INT"/>
+            <column name="istxgen" type="TINYINT"/>
+            <column name="sequence_no" type="INT"/>
+            <column name="isredelivery" type="TINYINT"/>
+            <column name="title_id" type="INT"/>
+            <column name="storage_estimate_red" type="INT"/>
+            <column name="storage_estimate_grey" type="INT"/>
+            <column name="storage_estimate_tomcat" type="INT"/>
+            <column name="relatedcontent_id" type="INT"/>
+            <column name="is_bonus" type="TINYINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-212" author="a.sazanovich (generated)">
+        <createTable tableName="order_title_client_deliverables">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order_title_client_deliverables"/>
+            </column>
+            <column name="order_title_id" type="INT"/>
+            <column name="client_deliverables_id" type="INT"/>
+            <column name="delivery_type" type="VARCHAR(255)"/>
+            <column name="delivery_status" type="VARCHAR(255)"/>
+            <column name="delivery_date" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-213" author="a.sazanovich (generated)">
+        <createTable tableName="order_title_milestone">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order_title_milestone"/>
+            </column>
+            <column name="order_id" type="INT"/>
+            <column name="order_title_id" type="INT"/>
+            <column name="milestone_type_id" type="INT"/>
+            <column name="date" type="DATE"/>
+            <column name="reference_order_title_milestone" type="INT"/>
+            <column name="offset_duration" type="INT"/>
+            <column name="business_days" type="TINYINT"/>
+            <column name="template_date" type="DATE"/>
+            <column name="estimated_date" type="DATE"/>
+            <column name="due_date" type="DATE"/>
+            <column name="milestone_name" type="VARCHAR(255)"/>
+            <column name="flexibility" type="VARCHAR(255)"/>
+            <column name="order_number" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-218" author="a.sazanovich (generated)">
+        <createTable tableName="order_title_tab_status">
+            <column autoIncrement="true" name="order_title_tab_status_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order_title_tab_status"/>
+            </column>
+            <column name="order_title_id" type="INT"/>
+            <column name="tab_id" type="INT"/>
+            <column name="status" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-219" author="a.sazanovich (generated)">
+        <createTable tableName="order_title_tabs">
+            <column autoIncrement="true" name="order_title_tabs_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order_title_tabs"/>
+            </column>
+            <column name="tab_name" type="VARCHAR(255)"/>
+            <column name="is_valid" type="TINYINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-221" author="a.sazanovich (generated)">
+        <createTable tableName="order_types">
+            <column name="id" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order_types"/>
+            </column>
+            <column name="order_type_description" type="VARCHAR(255)"/>
+            <column name="sendtoxytech" type="TINYINT"/>
+            <column name="xytech_wo_type_no" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-129" author="a.sazanovich (generated)">
+        <createTable tableName="client_deliverables">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_client_deliverables"/>
+            </column>
+            <column name="retailer_id" type="INT"/>
+            <column name="content_version_package_id" type="INT"/>
+            <column name="title_id" type="INT"/>
+            <column name="retailer_track_type" type="VARCHAR(255)"/>
+            <column name="retailer_trackid" type="VARCHAR(255)"/>
+            <column name="format" type="VARCHAR(255)"/>
+            <column name="content_type" type="VARCHAR(255)"/>
+            <column name="track_subtype" type="VARCHAR(255)"/>
+            <column name="language_id" type="INT"/>
+            <column name="file_tracker_id" type="INT"/>
+            <column name="retailer_inventory_type" type="VARCHAR(255)"/>
+            <column name="inventory_file_name" type="VARCHAR(255)"/>
+            <column name="is_active" type="TINYINT"/>
+            <column name="qc_status" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-130" author="a.sazanovich (generated)">
+        <createTable tableName="client_deliverables_note">
+            <column name="client_deliverables" type="INT"/>
+            <column name="note" type="INT"/>
+            <column name="client_rejection" type="TINYINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1666464312144-147" author="a.sazanovich (generated)">
+        <createTable tableName="delta_asset">
+            <column autoIncrement="true" name="delta_asset_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_delta_asset"/>
+            </column>
+            <column name="delta_asset_uuid" type="VARCHAR(255)"/>
+            <column name="asset_video_id" type="INT"/>
+            <column name="asset_audio_id" type="INT"/>
+            <column name="asset_text_id" type="INT"/>
+            <column name="asset_insert_id" type="INT"/>
+            <column name="asset_composite_id" type="INT"/>
+            <column name="asset_art_id" type="INT"/>
+            <column name="asset_dubcard_id" type="INT"/>
+            <column name="asset_clip_id" type="INT"/>
+            <column name="asset_clip_local_id" type="INT"/>
+            <column name="is_derivative" type="TINYINT"/>
+            <column name="derivative_type_id" type="INT"/>
+            <column name="asset_completed_date" type="DATETIME"/>
+            <column name="asset_md5" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
